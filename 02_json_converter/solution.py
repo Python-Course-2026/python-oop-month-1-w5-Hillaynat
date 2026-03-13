@@ -1,9 +1,14 @@
 import csv
 import json
-def convert(users.csv,json_file):
-    with open(users.csv) as users.csv:
-        reader = csv.DictReader(users_csv)
-        headers = users_csv.readline().split(',').strip()
-        with open(users.json, 'w') as json_file:
-            json.dump(reader, users, ensure_ascii=False)
+csv_file= 'users.csv'
+json_file= 'users.json'
+def convert(filename):
+    data = []
+    with open(filename) as csvfile :
+        reader = csv.DictReader(filename)
+        for row in reader:
+            data.append(row)
+    with open(json_file, 'w') as jsonfile:
+        json.dump(data, jsonfile)
+convert('users.csv')
 
