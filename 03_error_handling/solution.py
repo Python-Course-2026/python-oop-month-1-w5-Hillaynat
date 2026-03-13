@@ -12,4 +12,5 @@ class FileHandler:
             with open('log.txt', 'w') as log_file:
                 log_file.write('ERROR')
 handler = FileHandler()
+
 handler.file_read()
